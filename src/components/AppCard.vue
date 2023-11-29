@@ -15,10 +15,9 @@
         <div>Titolo originale: {{ movie.original_title }}</div>
         <div>
             <div>Lingua: {{ movie.original_language }}</div>
-            <div>Paese: {{ movie.origin_country }}</div>
         </div>
         <div>Voto: {{ movie.vote_average }}</div>
-        <div>Overview: {{ movie.overview}}</div>
+        <div>Overview: {{ movie.overview ? movie.overview : 'nessuna' }}</div>
     </div>
   </section>
 </template>
