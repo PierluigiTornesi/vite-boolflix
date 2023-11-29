@@ -1,14 +1,36 @@
 <script>
 
 
-export default{
-    
-}
+    export default{
+        props:{
+            movie: Object
+        }
+    }
 </script>
 
 <template>
-  
+  <section class="text-white text-left bg-dark border p-2">
+    <div class="dim">
+        <div>Titolo: {{ movie.title }}</div>
+        <div>Titolo originale: {{ movie.original_title }}</div>
+        <div>
+            <div>Lingua: {{ movie.original_language }}</div>
+            <div>Paese: {{ movie.origin_country }}</div>
+        </div>
+        <div>Voto: {{ movie.vote_average }}</div>
+        <div>Overview: {{ movie.overview}}</div>
+    </div>
+  </section>
 </template>
 
 <style scoped>
+section{
+    height: 100%;
+}
+
+.dim{
+    min-height: 300px;
+    width: 300px;
+    margin: 0 auto;
+}
 </style>
