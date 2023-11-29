@@ -1,6 +1,4 @@
 <script>
-
-
     export default{
         props:{
             tv: Object
@@ -17,7 +15,7 @@
             <div>Lingua: {{ tv.original_language }}</div>
             <div>Paese: {{ tv.origin_country[0] ? tv.origin_country[0] : 'sconosciuto' }}</div>
         </div>
-        <div>Voto: {{ tv.vote_average }}</div>
+        <div>Voto: {{ Math.round(tv.vote_average / 2) }}</div>
         <div>Overview: {{ tv.overview ? tv.overview : 'nessuna' }}</div>
     </div>
   </section>

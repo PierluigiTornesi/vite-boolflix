@@ -1,6 +1,4 @@
 <script>
-
-
     export default{
         props:{
             movie: Object
@@ -16,7 +14,7 @@
         <div>
             <div>Lingua: {{ movie.original_language }}</div>
         </div>
-        <div>Voto: {{ movie.vote_average }}</div>
+        <div>Voto: {{ Math.round(movie.vote_average /2) }}</div>
         <div>Overview: {{ movie.overview ? movie.overview : 'nessuna' }}</div>
     </div>
   </section>
