@@ -15,7 +15,7 @@ import AppMain from "./components/AppMain.vue";
     handleSearch() {
       //richiesta per movie
       console.log("cerco film e serie tv");
-        axios.get(this.store.baseUrlMovie, {
+        axios.get(`${this.store.baseUrl}/search/movie`, {
             params: {
               query: this.store.searchText,
               api_key: this.store.apiKey,
@@ -25,7 +25,7 @@ import AppMain from "./components/AppMain.vue";
             this.store.arrayMovies = resp.data.results;
           });
           //richiesta per serie tv
-        axios.get(this.store.baseUrlTV, {
+        axios.get(`${this.store.baseUrl}/search/tv`, {
             params: {
               query: this.store.searchText,
               api_key: this.store.apiKey,
