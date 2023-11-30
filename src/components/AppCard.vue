@@ -2,6 +2,19 @@
     export default{
         props:{
             movieObj: Object
+        },
+        data(){
+            return{
+                flags:["de","en","es","fr","it"]
+            }
+        },
+        methods:{
+            getImagePath(language){
+                return new URL(`../assets/images/${language}.png`, import.meta.url).href;
+            },
+            hasFlag(){
+                return this.flags.includes(this.movieObj.original_language)
+            }
         }
     }
 </script>
@@ -12,7 +25,7 @@
         <div>Titolo: {{ movieObj.title ? movieObj.title : movieObj.name }}</div>
         <div>Titolo originale: {{ movieObj.original_title ? movieObj.original_title : movieObj.original_name }}</div>
         <div>
-            <div>Lingua: {{ movieObj.original_language }}</div>
+            <img v-if="hasFlag()" :src="getImagePath(movieObj.original_language)" alt="">
         </div>
         <div>Voto: {{ Math.round(movieObj.vote_average /2) }}</div>
         <div>Overview: {{ movieObj.overview ? movieObj.overview : 'nessuna' }}</div>
