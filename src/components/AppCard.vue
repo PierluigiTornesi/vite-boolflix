@@ -23,6 +23,9 @@
             },
             imageNot(){
                 return "https://image.tmdb.org/t/p/"
+            },
+            getVoteRounded(){
+                return Math.round(this.movieObj.vote_average /2);
             }
         }
     }
@@ -45,7 +48,10 @@
             </p>
             <p v-else>Lingua: {{ movieObj.original_language }}</p>
         </div>
-        <div>Voto: {{ Math.round(movieObj.vote_average /2) }}</div>
+        <div>
+            Voto:
+            <i v-for="star in 5" class="fa-star " :class="star <= getVoteRounded() ? 'fa-solid' : 'fa-regular'"></i>
+        </div>
         <div>Overview: {{ movieObj.overview ? movieObj.overview : 'nessuna' }}</div>
     </div>
   </section>
