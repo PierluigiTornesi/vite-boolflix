@@ -1,7 +1,7 @@
 <script>
     export default{
         props:{
-            movie: Object
+            movieObj: Object
         }
     }
 </script>
@@ -9,13 +9,13 @@
 <template>
   <section class="text-white text-left bg-dark border p-2">
     <div class="dim">
-        <div>Titolo: {{ movie.title }}</div>
-        <div>Titolo originale: {{ movie.original_title }}</div>
+        <div>Titolo: {{ movieObj.title ? movieObj.title : movieObj.name }}</div>
+        <div>Titolo originale: {{ movieObj.original_title ? movieObj.original_title : movieObj.original_name }}</div>
         <div>
-            <div>Lingua: {{ movie.original_language }}</div>
+            <div>Lingua: {{ movieObj.original_language }}</div>
         </div>
-        <div>Voto: {{ Math.round(movie.vote_average /2) }}</div>
-        <div>Overview: {{ movie.overview ? movie.overview : 'nessuna' }}</div>
+        <div>Voto: {{ Math.round(movieObj.vote_average /2) }}</div>
+        <div>Overview: {{ movieObj.overview ? movieObj.overview : 'nessuna' }}</div>
     </div>
   </section>
 </template>

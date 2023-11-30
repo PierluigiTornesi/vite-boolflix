@@ -1,7 +1,6 @@
 <script>
 import { store } from '../store';
 import AppCard from './AppCard.vue';
-import AppCardTV from './AppCardTV.vue';
 
 
 
@@ -11,7 +10,7 @@ import AppCardTV from './AppCardTV.vue';
                 store
             }
         },
-    components: { AppCard, AppCardTV }
+    components: { AppCard,}
 }
 </script>
 
@@ -21,7 +20,7 @@ import AppCardTV from './AppCardTV.vue';
             <div class="row d-flex ">
                 <h2>Movie</h2>
                 <div class="col-4" v-for="movie in store.arrayMovies">
-                    <AppCard  :movie = movie />
+                    <AppCard  :movieObj = movie />
                 </div>
             </div>  
         </div>
@@ -29,7 +28,7 @@ import AppCardTV from './AppCardTV.vue';
             <div class="row d-flex ">
                 <h2>TVs</h2>
                 <div class="col-4" v-for="tv in store.arrayTVs">
-                    <AppCardTV  :tv = tv />
+                    <AppCard  :movieObj = tv />
                 </div>
             </div>  
         </div>
