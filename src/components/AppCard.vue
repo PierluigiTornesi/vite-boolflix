@@ -32,8 +32,8 @@
 </script>
 
 <template>
-  <section  class="text-white text-left bg-dark border p-2 d-flex flex-column align-items-center">
-    <div>
+  <section  class="text-white text-left bg-dark border p-2 d-flex flex-column align-items-center justify-content-center">
+    <div class="copertina">
         <img v-if="hasImagePath(movieObj.poster_path)" :src="(getImagePath(movieObj.poster_path) )" alt="">
         <img v-else src="../assets/images/noImage.jpg" alt="">
     </div>
@@ -62,8 +62,23 @@ section{
     height: 100%;
 }
 .dim{
-        min-height: 300px;
+        min-height: 400px;
         width: 300px;
-        margin: 0 auto;   
+        font-weight: bold;
+        margin: 0 auto;  
+        display: none;
 }
+
+section:hover .dim{
+    display: block;
+}
+
+section:hover .copertina{
+    display: none;
+}
+
+.fa-star{
+    color: yellow;
+}
+
 </style>

@@ -19,7 +19,7 @@ import AppCard from './AppCard.vue';
         <div class=" container">
             <div class="row d-flex ">
                 <h2>Movie</h2>
-                <div class="col-4" v-for="movie in store.arrayMovies">
+                <div class="col-4 p-1" v-for="movie in store.arrayMovies">
                     <AppCard  :movieObj = movie />
                 </div>
             </div>  
@@ -27,7 +27,7 @@ import AppCard from './AppCard.vue';
         <div class=" container">
             <div class="row d-flex ">
                 <h2>TVs</h2>
-                <div class="col-4" v-for="tv in store.arrayTVs">
+                <div class="col-4 p-1" v-for="tv in store.arrayTVs">
                     <AppCard  :movieObj = tv />
                 </div>
             </div>  
