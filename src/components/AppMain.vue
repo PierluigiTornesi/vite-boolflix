@@ -18,7 +18,7 @@ import AppCard from './AppCard.vue';
     <main class=" bg-secondary">
         <div class=" container">
             <div class="row d-flex ">
-                <h2>Movie</h2>
+                <h2 class="text-center">Movie</h2>
                 <div class="col-4 p-1" v-for="movie in store.arrayMovies">
                     <AppCard  :movieObj = movie />
                 </div>
@@ -26,7 +26,7 @@ import AppCard from './AppCard.vue';
         </div>
         <div class=" container">
             <div class="row d-flex ">
-                <h2>TVs</h2>
+                <h2 class="text-center">TVs</h2>
                 <div class="col-4 p-1" v-for="tv in store.arrayTVs">
                     <AppCard  :movieObj = tv />
                 </div>
@@ -36,4 +36,8 @@ import AppCard from './AppCard.vue';
 </template>
 
 <style scoped>
+main{
+    height: calc(100vh - 100px);
+    overflow-y: scroll;
+}
 </style>

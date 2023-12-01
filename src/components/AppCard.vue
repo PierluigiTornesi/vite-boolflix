@@ -21,9 +21,6 @@
             hasImagePath(path){
                 return (path !== null ? true : false)
             },
-            imageNot(){
-                return "https://image.tmdb.org/t/p/"
-            },
             getVoteRounded(){
                 return Math.round(this.movieObj.vote_average /2);
             }

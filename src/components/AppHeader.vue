@@ -12,7 +12,7 @@ export default{
 
 <template>
   <header class="bg-dark d-flex justify-content-between ">
-    <div>
+    <div class="d-flex align-items-center">
         <h1 class="text-danger p-1">BOOLFIX</h1>
     </div>
     <div class="d-flex align-items-center w-25 px-4">
@@ -23,4 +23,7 @@ export default{
 </template>
 
 <style lang="scss" scoped>
+header{
+  height: 100px;
+}
 </style>
