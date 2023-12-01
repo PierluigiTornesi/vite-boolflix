@@ -27,7 +27,7 @@
             },
             //metodo per arrotondare il voto del film e della serie tv
             getVoteRounded(){
-                return Math.round(this.movieObj.vote_average /2);
+                return Math.ceil(this.movieObj.vote_average /2);
             }
         }
     }
