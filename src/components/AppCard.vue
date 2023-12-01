@@ -51,8 +51,8 @@
             <p v-else>Lingua: {{ movieObj.original_language }}</p>
         </div>
         <div>
-            Voto:
-            <i v-for="star in 5" class="fa-star " :class="star <= getVoteRounded() ? 'fa-solid' : 'fa-regular'"></i>
+            Valutazione:
+            <i v-for="num in 5" class="fa-star " :class="num <= getVoteRounded() ? 'fa-solid' : 'fa-regular'"  :key="num"></i>
         </div>
         <div>Overview: {{ movieObj.overview ? movieObj.overview : 'nessuna' }}</div>
     </div>
