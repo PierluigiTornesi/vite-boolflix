@@ -9,18 +9,23 @@
             }
         },
         methods:{
+            //metodo per prendere l'url della bandiera della lingua
             getFlagPath(language){
                 return new URL(`../assets/images/${language}.png`, import.meta.url).href;
             },
+            //metodo per vedee se l'oggetto ha bandiera disponibile
             hasFlag(){
                 return this.flags.includes(this.movieObj.original_language)
             },
+            //metodo per prendere la copertina del film e della serie tv
             getImagePath(path){
                  return `https://image.tmdb.org/t/p/w342${path}`;
             },
+            //metodo per controllare se il film o la serie tv ha una copertina
             hasImagePath(path){
                 return (path !== null ? true : false)
             },
+            //metodo per arrotondare il voto del film e della serie tv
             getVoteRounded(){
                 return Math.round(this.movieObj.vote_average /2);
             }
@@ -32,7 +37,7 @@
   <section  class="text-white text-left bg-dark border p-2 d-flex flex-column align-items-center justify-content-center">
     <div class="copertina">
         <img v-if="hasImagePath(movieObj.poster_path)" :src="(getImagePath(movieObj.poster_path) )" alt="">
-        <img v-else src="../assets/images/noImage.jpg" alt="">
+        <img v-else src="../assets/images/noImage.jpg" alt="no-image">
     </div>
     <div class="dim">
         <div>Titolo: {{ movieObj.title ? movieObj.title : movieObj.name }}</div>

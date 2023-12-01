@@ -40,18 +40,11 @@ import AppMain from "./components/AppMain.vue";
 </script>
 
 <template>
-  <div class="header">
-    <AppHeader @performSearch="handleSearch" />
-  </div>
-  <div class="main">
-    <AppMain />
-  </div>
-  
+  <AppHeader @performSearch="handleSearch" />
+  <AppMain />
 </template>
 
 <style lang="scss">
 @use "./style/general.scss";
 @import "@fortawesome/fontawesome-free/css/all.css";
-
-
 </style>
